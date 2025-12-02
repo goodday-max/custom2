@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>디엑셀 커스텀 데칼 디자인 프리뷰</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0/nanumsquareneo.css">
+
+  <style>
+    /* =========================================
+       1. 폰트 정의
+       ========================================= */
+
+    /* 폰트1 : 티몬 몬소리 */
+    @font-face {
+      font-family: 'TmonMonsori';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트2 : 배달의민족 도현 */
+    @font-face {
+      font-family: 'BMDOHYEON';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트3 : 배달의민족 주아 */
+    @font-face {
+      font-family: 'BMJUA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트4 : 배달의민족 연성 */
+    @font-face {
+      font-family: 'BMYEONSUNG';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMYEONSUNG.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트5 : 강원교육모두 Bold */
+    @font-face {
+      font-family: 'GangwonEdu_OTFBoldA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트6 : 메이플스토리 Light */
+    @font-face {
+      font-family: 'MaplestoryOTFLight';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트7 : 마루 부리 */
+    @font-face {
+      font-family: 'MaruBuri-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트8 : 카페24 슈퍼매직 Bold */
+    @font-face {
+      font-family: 'Cafe24Supermagic-Bold-v1.0';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    /* 폰트9 : 나눔손글씨 연지체 (Yeonji) */
+    @font-face {
+      font-family: 'Yeonji';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_11@1.0/Yunji.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* 폰트10 : 나눔스퀘어 네오 (상단 링크 사용) */
+
+    /* 폰트11 : 배달의민족 을지로체 */
+    @font-face {
+      font-family: 'BMEULJIRO';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트13 : Neo둥근모 Pro */
+    @font-face {
+      font-family: 'NeoDunggeunmoPro-Regular';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
+      font-weight: normal; font-style: normal;
+    }
+    /* 폰트14 : 조선궁서체 (ChosunGs) */
+    @font-face {
+      font-family: 'ChosunGs';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    /* 폰트15 : 카페24 써라운드 에어 */
+    @font-face {
+      font-family: 'Cafe24SsurroundAir';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+      font-weight: normal; font-style: normal;
+    }
+
+    /* =========================================
+       2. 스타일 정의
+       ========================================= */
+    body {
+      font-family: 'NanumSquareNeo', -apple-system, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.6;
+      font-size: 15px;
+      color: #333;
+    }
+
+    h1 { margin-bottom: 4px; font-size: 24px; font-weight: 700; }
+    
+    label { display: block; margin-top: 16px; font-weight: 600; font-size: 14px; }
+
+    textarea, select {
+      width: 100%; box-sizing: border-box; padding: 8px 10px;
+      margin-top: 6px; border: 1px solid #ddd; border-radius: 6px;
+      font-family: inherit; font-size: 14px;
+    }
+    textarea { resize: vertical; min-height: 60px; }
+
+    /* 미리보기 박스 */
+    .preview-box {
+      margin-top: 14px; padding: 10px; border-radius: 8px;
+      border: 1px dashed #bbb; background: #fafafa;
+      width: 100%; max-width: 900px; box-sizing: border-box;
+    }
+
+    .car-wrap { position: relative; width: 100%; max-width: 900px; }
+    #car-img { width: 100%; display: block; }
+
+    /* 유리 영역 */
+    .window-overlay {
+      position: absolute; left: 7%; top: 16%; width: 86%; height: 45%;
+      display: flex; justify-content: flex-start; align-items: center;
+      pointer-events: none; background: transparent; overflow: hidden;
+      box-sizing: border-box; padding: 0 6%;
+    }
+
+    .align-group { display: flex; flex-direction: column; align-items: flex-start; }
+
+    /* 가이드 라인 (파스텔 노랑) */
+    .size-ruler-overlay {
+      height: 16px; margin-bottom: 10px; position: relative; width: 100%; box-sizing: border-box;
+    }
+    .size-ruler-inner {
+      position: relative; height: 16px; width: 100%;
+    }
+
+    .size-ruler-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      border-top: 1px solid #FFE87C;
+      transform: translateY(-50%);
+    }
+
+    .size-ruler-end {
+      position: absolute; top: 50%; width: 2px; height: 14px;
+      background: #FFE87C;
+      transform: translateY(-50%);
+    }
+    .size-ruler-end.left  { left: 0; }
+    .size-ruler-end.right { right: 0; }
+
+    .size-ruler-label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: -10px;     /* 🔹 라인보다 15px 위로 올림 */
+      background: transparent;
+      padding: 0 6px;
+      font-size: 11px;
+      color: #FFE87C;
+      white-space: nowrap;
+      border-radius: 4px;
+    }
+
+    #preview-text {
+      white-space: pre; text-align: left; color: #ffffff;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    /* 하단 정보 */
+    .size-box {
+      margin-top: 10px; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid #e0e0e0; background: #ffffff;
+      font-size: 13px; color: #333; line-height: 1.5;
+    }
+    .size-note, .preview-note { font-size: 12px; color: #777; margin-top: 6px; }
+
+    #measure-span {
+      position: absolute; visibility: hidden; left: -9999px; top: -9999px; white-space: pre;
+    }
+
+    /* =========================================
+       3. 드롭다운 내부 미리보기
+       ========================================= */
+    option[value="font1"]  { font-family: 'TmonMonsori', sans-serif; }
+    option[value="font2"]  { font-family: 'BMDOHYEON',   sans-serif; }
+    option[value="font3"]  { font-family: 'BMJUA',       sans-serif; }
+    option[value="font4"]  { font-family: 'BMYEONSUNG',  sans-serif; }
+    option[value="font5"]  { font-family: 'GangwonEdu_OTFBoldA', sans-serif; }
+    option[value="font6"]  { font-family: 'MaplestoryOTFLight',  sans-serif; }
+    option[value="font7"]  { font-family: 'MaruBuri-Regular',    serif; }
+    option[value="font8"]  { font-family: 'Cafe24Supermagic-Bold-v1.0', sans-serif; }
+    option[value="font9"]  { font-family: 'Yeonji', sans-serif; font-weight: bold; }
+    option[value="font10"] { font-family: 'NanumSquareNeo', sans-serif; font-weight: 800; }
+    option[value="font11"] { font-family: 'BMEULJIRO',     sans-serif; }
+    option[value="font13"] { font-family: 'NeoDunggeunmoPro-Regular', monospace; }
+    option[value="font14"] { font-family: 'ChosunGs',      serif; font-weight: 600; }
+    option[value="font15"] { font-family: 'Cafe24SsurroundAir', sans-serif; font-weight: 700; }
+
+  </style>
+</head>
+<body>
+  <h1>디엑셀 커스텀 데칼 디자인 프리뷰</h1>
+
+  <label>
+    문구입력
+    <span style="font-weight:400; font-size:12px; color:#666;">
+      [띄어쓰기, 이모티콘, 특수문자, 줄바꿈 /(슬래시) 포함 총 20자 까지 입력가능합니다]
+    </span>
+    <textarea id="text-input" maxlength="20" placeholder="슬래시 / = 줄바꿈"></textarea>
+  </label>
+
+  <label>
+    사이즈 선택
+    <select id="width-select">
+      <option value="25">기본 (가로 25cm)</option>
+      <option value="30">중형 (가로 30cm)</option>
+      <option value="40">대형 (가로 40cm)</option>
+    </select>
+  </label>
+
+  <label>
+    폰트 선택
+    <select id="font-select">
+      <option value="font1">1번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font2">2번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font3">3번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font4">4번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font5">5번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font6">6번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font7">7번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font8">8번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font9">9번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font10">10번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font11">11번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font13">13번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font14">14번 글씨체 - 가나다라 ABCY abcy 1234</option>
+      <option value="font15">15번 글씨체 - 가나다라 ABCY abcy 1234</option>
+    </select>
+  </label>
+
+  <label>
+    정렬 선택
+    <select id="align-select">
+      <option value="left" selected>좌측정렬</option>
+      <option value="right">우측정렬</option>
+      <option value="center">중앙정렬</option>
+    </select>
+  </label>
+
+  <div id="preview-box" class="preview-box">
+    <div class="car-wrap">
+      <img id="car-img" src="쏘렌토 이미지 1900.jpg" alt="차량 이미지">
+
+      <div id="window-overlay" class="window-overlay">
+        <div id="align-group" class="align-group">
+          <div id="size-ruler-overlay" class="size-ruler-overlay">
+            <div class="size-ruler-inner">
+              <div class="size-ruler-line"></div>
+              <div class="size-ruler-end left"></div>
+              <div class="size-ruler-end right"></div>
+              <div class="size-ruler-label" id="size-ruler-label">가로 25cm</div>
+            </div>
+          </div>
+          <div id="preview-text">미리보기</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-note">
+    예시차량 : 기아 쏘렌토 MQ4 PE<br>
+    *화면상의 이미지는 실제와 다소 차이가 있을 수 있습니다.<br>
+    *권장 tip : 본 페이지에서 스티커 규격을 확인한 뒤, 실제 차량에 직접 대보고 잘 맞는지 확인해 보세요.
+  </div>
+
+  <div id="size-box" class="size-box">
+    <div id="size-width">가로 사이즈 : - cm</div>
+    <div id="size-height">세로 사이즈 : - cm</div>
+    <div class="size-note">
+      *세로의 실제 사이즈는 다소 오차가 있을 수 있습니다. (오차범위 : ± 1.5cm)
+    </div>
+  </div>
+
+  <span id="measure-span"></span>
+
+  <script>
+    const textInput        = document.getElementById("text-input");
+    const fontSelect       = document.getElementById("font-select");
+    const widthSelect      = document.getElementById("width-select");
+    const alignSelect      = document.getElementById("align-select");
+    const measureSpan      = document.getElementById("measure-span");
+    const previewText      = document.getElementById("preview-text");
+    const sizeRulerLabel   = document.getElementById("size-ruler-label");
+    const sizeRulerOverlay = document.getElementById("size-ruler-overlay");
+    const sizeBoxWidth     = document.getElementById("size-width");
+    const sizeBoxHeight    = document.getElementById("size-height");
+    const carImg           = document.getElementById("car-img");
+    const alignGroup       = document.getElementById("align-group");
+    const windowOverlay    = document.getElementById("window-overlay");
+
+    const LINE_HEIGHT_RATIO = 1.1;
+    const CAR_REAL_WIDTH_CM = 190;
+
+    function getSelectedFontConfig() {
+      const val = fontSelect.value;
+      let family = "'NanumSquareNeo', sans-serif";
+      let weight = "normal";
+
+      if (val === "font1")  family = "'TmonMonsori', sans-serif";
+      if (val === "font2")  family = "'BMDOHYEON', sans-serif";
+      if (val === "font3")  family = "'BMJUA', sans-serif";
+      if (val === "font4")  family = "'BMYEONSUNG', sans-serif";
+      if (val === "font5")  family = "'GangwonEdu_OTFBoldA', sans-serif";
+      if (val === "font6")  family = "'MaplestoryOTFLight', sans-serif";
+      if (val === "font7")  { family = "'MaruBuri-Regular', serif"; weight = "bold"; }
+      if (val === "font8")  { family = "'Cafe24Supermagic-Bold-v1.0', sans-serif"; weight = "700"; }
+      if (val === "font9")  { family = "'Yeonji', sans-serif"; weight = "bold"; }
+      if (val === "font10") { family = "'NanumSquareNeo', sans-serif"; weight = "800"; }
+      if (val === "font11") family = "'BMEULJIRO', sans-serif";
+      if (val === "font13") family = "'NeoDunggeunmoPro-Regular', monospace";
+      if (val === "font14") { family = "'ChosunGs', serif"; weight = "600"; }
+      if (val === "font15") { family = "'Cafe24SsurroundAir', sans-serif"; weight = "700"; }
+
+      return { family, weight };
+    }
+
+    function recompute() {
+      let raw = textInput.value || "";
+      if (raw.length > 20) {
+        raw = raw.substring(0, 20);
+        textInput.value = raw;
+      }
+      const processed = raw.replace(/\//g, "\n");
+      
+      const { family, weight } = getSelectedFontConfig();
+
+      fontSelect.style.fontFamily = family;
+      fontSelect.style.fontWeight = weight;
+
+      previewText.style.fontFamily = family;
+      previewText.style.fontWeight = weight;
+      
+      measureSpan.style.fontFamily = family;
+      measureSpan.style.fontWeight = weight;
+
+      const carW = carImg.getBoundingClientRect().width;
+      if (!carW) return;
+
+      const selCm   = parseFloat(widthSelect.value);
+      const pxPerCm = carW / CAR_REAL_WIDTH_CM;
+      const targetPx = pxPerCm * selCm;
+
+      const align = alignSelect.value;
+      if (align === 'left') {
+        windowOverlay.style.justifyContent = 'flex-start';
+        alignGroup.style.alignItems = 'flex-start';
+        previewText.style.textAlign = 'left';
+        alignGroup.style.marginLeft = '60px'; alignGroup.style.marginRight = '0';
+      } else if (align === 'right') {
+        windowOverlay.style.justifyContent = 'flex-end';
+        alignGroup.style.alignItems = 'flex-end';
+        previewText.style.textAlign = 'right';
+        alignGroup.style.marginRight = '60px'; alignGroup.style.marginLeft = '0';
+      } else {
+        windowOverlay.style.justifyContent = 'center';
+        alignGroup.style.alignItems = 'center';
+        previewText.style.textAlign = 'center';
+        alignGroup.style.marginLeft = '0'; alignGroup.style.marginRight = '0';
+      }
+
+      const pureText = processed.replace(/\n/g, "");
+      if (pureText.length < 2) {
+        previewText.style.fontSize = "14px";
+ previewText.style.fontFamily = "'NanumSquareNeo', sans-serif";
+  previewText.style.fontWeight = "750";  // 나눔스퀘어 네오 OTF 느낌(보통)
+        previewText.textContent = "두 글자부터 미리보기 가능";
+        alignGroup.style.width = targetPx + "px";
+        sizeRulerOverlay.style.width = "100%";
+        sizeRulerLabel.textContent = `가로 ${selCm}cm`;
+        sizeBoxWidth.textContent = "가로 : -";
+        sizeBoxHeight.textContent = "세로 : -";
+        return;
+      }
+
+      const finalSize = findFontSize(processed, family, weight, targetPx);
+      previewText.style.fontSize = finalSize + "px";
+      previewText.style.lineHeight = (finalSize * LINE_HEIGHT_RATIO) + "px";
+      previewText.textContent = processed || "미리보기";
+
+      measureSpan.style.fontSize = finalSize + "px";
+      measureSpan.style.lineHeight = (finalSize * LINE_HEIGHT_RATIO) + "px";
+      measureSpan.textContent = processed;
+      
+      const rect = measureSpan.getBoundingClientRect();
+      alignGroup.style.width = rect.width + "px";
+      
+      sizeRulerOverlay.style.width = "100%";
+      sizeRulerLabel.textContent = `가로 ${selCm}cm`;
+
+      const realH = rect.height * (CAR_REAL_WIDTH_CM / carW);
+      sizeBoxWidth.textContent  = `가로 사이즈 : ${selCm} cm`;
+      sizeBoxHeight.textContent = `세로 사이즈 : ${realH.toFixed(1)} cm`;
+    }
+
+    function findFontSize(text, family, weight, targetWidth) {
+      let low = 1, high = 500, best = 10;
+      for (let i = 0; i < 20; i++) {
+        let mid = (low + high) / 2;
+        measureSpan.style.fontSize   = mid + "px";
+        measureSpan.style.fontFamily = family;
+        measureSpan.style.fontWeight = weight;
+        measureSpan.textContent      = text;
+        if (measureSpan.getBoundingClientRect().width > targetWidth) high = mid;
+        else { best = mid; low = mid; }
+      }
+      return best;
+    }
+
+    textInput.addEventListener("input",  recompute);
+    fontSelect.addEventListener("change", recompute);
+    widthSelect.addEventListener("change", recompute);
+    alignSelect.addEventListener("change", recompute);
+    window.addEventListener("resize",    recompute);
+    carImg.addEventListener("load",      recompute);
+    window.onload = recompute;
+  </script>
+</body>
+</html>
